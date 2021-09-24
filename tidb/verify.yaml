@@ -12,7 +12,7 @@ tasks:
       gosec -fmt=junit-xml -out=results.xml -stdout -verbose=text -exclude=G103,G104,G204,G307,G401,G404,G501,G505,G601 ./... || true
     reportDir: results.xml
 
-  - mame: tidb-check-license
+  - name: tidb-check-license
     taskType: common
     shellScript: |
       curl  ${FILE_SERVER_URL}/download/cicd/tools/license-eye-latest-ed749b8-linux-amd64 > tools/bin/license-eye
