@@ -15,6 +15,7 @@ tasks:
   - name: tidb-check-license
     taskType: common
     shellScript: |
+      mkdir -p tools/bin
       curl  ${FILE_SERVER_URL}/download/cicd/tools/license-eye-latest-ed749b8-linux-amd64 > tools/bin/license-eye
       chmod +x tools/bin/license-eye
       ./tools/bin/license-eye -c .github/licenserc.yml -v info header check
