@@ -24,6 +24,8 @@ tasks:
   - name: dm-unit-test
     taskType: unit-test
     shellScript: |
+      export TICDC_CODECOV_TOKEN=${TICDC_CODECOV_TOKEN}
+      export TICDC_COVERALLS_TOKEN=${TICDC_COVERALLS_TOKEN}
       make dm_unit_test_in_verify_ci
     buildEnv:
       image: hub.pingcap.net/jenkins/centos7_golang-1.16:latest
@@ -44,6 +46,8 @@ tasks:
   - name: cdc-unit-test
     taskType: unit-test
     shellScript: |
+      export TICDC_CODECOV_TOKEN=${TICDC_CODECOV_TOKEN}
+      export TICDC_COVERALLS_TOKEN=${TICDC_COVERALLS_TOKEN}
       make unit_test_in_verify_ci
     buildEnv:
       image: hub.pingcap.net/jenkins/centos7_golang-1.16:latest
