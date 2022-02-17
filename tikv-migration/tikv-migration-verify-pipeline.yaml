@@ -111,7 +111,7 @@ tasks:
         shellScript: |
             cd br/
             gosec -fmt=junit-xml -out=results.xml -stdout -verbose=text -exclude=G103,G104,G204,G304,G307,G401,G404,G501,G505,G601 ./... || true
-        reportDir: br/results.xml
+        gosecReport: br/results.xml
       image: "hub.pingcap.net/jenkins/centos7_golang-1.16:latest"  
       resources:  
           requests:
@@ -127,7 +127,7 @@ tasks:
         shellScript: |
             cd cdc/
             gosec -fmt=junit-xml -out=results.xml -stdout -verbose=text -exclude=G103,G104,G204,G304,G307,G401,G404,G501,G505,G601 ./... || true
-        reportDir: cdc/results.xml
+        gosecReport: cdc/results.xml
       image: "hub.pingcap.net/jenkins/centos7_golang-1.16:latest"  
       resources:  
           requests:
