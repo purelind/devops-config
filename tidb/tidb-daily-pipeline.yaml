@@ -140,7 +140,8 @@ tasks:
       checkerName: "lint-check" 
       params: 
         shellScript: |
-            golangci-lint run --out-format=junit-xml -v ./... > golangci-lint-report.xml
+            go build -o ./bin/golangci-lint github.com/golangci/golangci-lint/cmd/golangci-lint
+            ./bin/golangci-lint run --out-format=junit-xml -v ./... > golangci-lint-report.xml
         reportDir: golangci-lint-report.xml
       timeout: 60 
       image: "hub.pingcap.net/jenkins/centos7_golang-1.18:latest"  
