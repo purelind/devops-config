@@ -5,6 +5,7 @@ triggers:
   push:
       onBranch:
       - "master"
+      - "release-7.5"
       - "release-7.4"
       - "release-7.3"
       - "release-7.2"
@@ -33,7 +34,7 @@ tasks:
           scripts/generate_pdf.sh
           if [ "${TARGET_BRANCH}" = "master" ]; then
             python3 scripts/upload.py output.pdf tidb-dev-zh-manual.pdf;
-          elif [ "${TARGET_BRANCH}" = "release-7.1" ]; then
+          elif [ "${TARGET_BRANCH}" = "release-7.5" ]; then
             python3 scripts/upload.py output.pdf tidb-stable-zh-manual.pdf;
           elif case "${TARGET_BRANCH}" in release-*) ;; *) false;; esac; then
             python3 scripts/upload.py output.pdf tidb-v${TARGET_BRANCH##*-}-zh-manual.pdf;
